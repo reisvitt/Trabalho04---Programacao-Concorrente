@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #1c1c1c;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <LineChart fx:id="lineChart" layoutY="48.0" prefHeight="402.0" prefWidth="722.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="48.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Label alignment="CENTER" layoutX="48.0" layoutY="31.0" prefHeight="21.0" prefWidth="627.0" text="Quantidade de números primos a cada mil naturais" textFill="#a4a4a4" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="125.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="100.0" layoutY="450.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="100.0">
+         <children>
+            <Slider fx:id="slider1" blockIncrement="1.0" layoutX="8.0" majorTickUnit="9.0" max="9.0" minorTickCount="0" onMouseReleased="#velocidadeProdutor" />
+            <Label layoutY="20.0" text="Velocidade do Produtor" textFill="#969696" />
+            <Label fx:id="velocidadeProdutor" layoutX="159.0" text="0,5 por segundo" textFill="#656565" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="550.0" layoutY="450.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="100.0">
+         <children>
+            <Slider fx:id="slider2" blockIncrement="1.0" layoutX="15.0" majorTickUnit="9.0" max="9.0" minorTickCount="0" onMouseReleased="#velocidadeConsumidor" />
+            <Label layoutY="20.0" text="Velocidade do Consumidor" textFill="#969696" />
+            <Label fx:id="velocidadeConsumidor" layoutX="-96.0" text="0,5 por segundo" textFill="#656565" />
+         </children>
+      </AnchorPane>
+      <ProgressBar fx:id="progressBarIndicator" layoutX="573.0" layoutY="241.0" prefHeight="20.0" prefWidth="350.0" progress="0.0" rotate="-90.0" style="-fx-rotate: -90;" AnchorPane.bottomAnchor="239.0" AnchorPane.rightAnchor="-123.0" />
+      <Label layoutX="712.0" layoutY="441.0" text="Buffer vazio" textFill="#c3c3c3" AnchorPane.bottomAnchor="41.0" AnchorPane.rightAnchor="15.0" />
+      <Label layoutX="711.0" layoutY="48.0" text="Buffer cheio" textFill="#c3c3c3" AnchorPane.bottomAnchor="434.0" AnchorPane.rightAnchor="14.0" />
+      <Label layoutX="761.0" layoutY="74.0" text="10" textFill="#c3c3c3" AnchorPane.bottomAnchor="408.0" AnchorPane.rightAnchor="24.0" />
+      <Label layoutX="765.0" layoutY="408.0" text="0" textFill="#c3c3c3" AnchorPane.bottomAnchor="74.0" AnchorPane.rightAnchor="28.0" />
+      <Button fx:id="btnPause" layoutX="699.0" layoutY="11.0" mnemonicParsing="false" onAction="#pause" prefWidth="90.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-radius: 10px;" text="Pause" textFill="#dadada" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0" />
+      <AnchorPane fx:id="presentation" opacity="0.9" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #1c1c1c;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button alignment="CENTER" layoutX="326.0" layoutY="332.0" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#apresentacao" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Iniciar" textFill="#b5b5b5" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="325.0" />
+            <Label alignment="CENTER" layoutY="214.0" text="Produtor conta a quantidade de números primos a cada mil números naturais e coloca em uma fila.&#10;Consumidor retira-o da fila e exibe em um gráfico" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="214.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
