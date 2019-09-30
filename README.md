@@ -7,6 +7,6 @@ Implementação do Produto/Consumidor através de semáforos.
     - Consumidor:  retira o valor inserido no buffer (fila) pelo produtor e exibe em um gráfico.
     
 
-    * *Possui controles de velocidade*
-    * *Inserção e remoção dos elementos do buffer é exibida na GUI*
-    * *Máximo de elementos no buffer é 10*
+    - _Possui controles de velocidade_
+    - _Inserção e remoção dos elementos do buffer é exibida na GUI_
+    - _Máximo de elementos no buffer é 10_
